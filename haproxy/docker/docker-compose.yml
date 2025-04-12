@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  haproxy:
+    image: haproxy:latest
+    container_name: haproxy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+      - "8404:8404" # HAProxy stats
+    volumes:
+      - ./conf/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+      - ./cert/wso2.pem:/usr/local/etc/haproxy/certs/wso2.pem
+    networks:
+      - haproxy_network
+
+networks:
+  haproxy_network:
+    driver: bridge
