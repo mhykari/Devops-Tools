@@ -98,6 +98,6 @@ Custom port:
 docker run -p 8085:8080 guess-number
 
 ## 🧪 Running Tests
-mvn test
-Unit tests are included in:
-src/test/java/com/example/game/GameServiceTest.java
+mvn test  
+Unit tests are included in:  
+src/test/java/com/example/game/GameServiceTest.java  
